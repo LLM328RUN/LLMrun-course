@@ -174,6 +174,12 @@
   elements.previous.addEventListener('click', () => { const index = manifest.pages.findIndex(page => page.id === currentPageId); if (index > 0) location.hash = manifest.pages[index - 1].id; });
   elements.next.addEventListener('click', () => { const index = manifest.pages.findIndex(page => page.id === currentPageId); if (index < manifest.pages.length - 1) location.hash = manifest.pages[index + 1].id; });
   addEventListener('hashchange', () => loadPage(pageFromHash()));
+  addEventListener('message', event => {
+    if (event.source !== elements.frame.contentWindow || event.data?.type !== 'course-library:navigate') return;
+    const pageId = String(event.data.pageId || '');
+    if (!manifest.pages.some(page => page.id === pageId) || pageId === currentPageId) return;
+    location.hash = pageId;
+  });
   document.addEventListener('click', event => { if (!elements.navPanel.hidden && !event.target.closest('.course-nav')) { elements.navPanel.hidden = true; elements.navToggle.setAttribute('aria-expanded', 'false'); } });
   document.addEventListener('contextmenu', stop, { capture: true });
   document.addEventListener('copy', stop, { capture: true });

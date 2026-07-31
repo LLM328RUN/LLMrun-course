@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>VERL 深度解读 · 授权访问</title>
+  <title>LLMrun 强化学习课件 · 授权访问</title>
   <link rel="stylesheet" href="./viewer.css">
   <script src="./viewer.js" defer></script>
 </head>
 <body>
   <main id="loginView" class="login-view">
     <section class="login-card">
-      <div class="eyebrow">VERL · ENCRYPTED COURSEWARE</div>
+      <div class="eyebrow">LLMRUN · ENCRYPTED COURSE LIBRARY</div>
       <h1>授权用户登录</h1>
-      <p>课件采用加密传输。请输入分配给你的用户名与密码，登录后用户名会显示为全站防伪水印。</p>
+      <p>全部课件共用一次登录。请输入分配给你的用户名与密码，登录后即可在所有授权课程间切换，用户名会显示为全站防伪水印。</p>
       <form id="loginForm">
         <label>用户名<input id="username" name="username" autocomplete="username" required autofocus></label>
         <label>密码<input id="password" name="password" type="password" autocomplete="current-password" required></label>
@@ -25,14 +25,14 @@
   </main>
 
   <main id="courseView" class="course-view" hidden>
-    <iframe id="lessonFrame" title="VERL 课程内容" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    <iframe id="lessonFrame" title="LLMrun 加密课程内容" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     <div id="loading" class="loading"><i></i><span>正在解密课件…</span></div>
     <div id="watermarks" class="watermarks" aria-hidden="true"></div>
     <div class="identity"><i></i><span>授权用户：<b id="identityName"></b></span><button id="logoutButton" type="button">退出</button></div>
     <nav class="course-nav" aria-label="课程页面导航">
-      <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false"><i></i><span>课程导航</span><b>☰</b></button>
+      <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false"><i></i><span>切换课程</span><b>☰</b></button>
       <section id="navPanel" class="nav-panel" hidden>
-        <header><span>VERL DEEP DIVE</span><b id="progress"></b></header>
+        <header><span>COURSE LIBRARY</span><b id="progress"></b></header>
         <div id="navItems"></div>
         <footer><button id="previousPage" type="button">← 上一页</button><button id="nextPage" type="button">下一页 →</button></footer>
       </section>
